@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv1/
+.env/
+.venv/
+
+# Environment variables
+*.env
+
+# VS Code settings
+.vscode/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# Coverage / testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+#csv data files
+drive-download-20260323T152350Z-3-001/
+others.txt
+proj_doc.txt
+catboost_info/
+ride_outcome_pred_model.ipynb
+
+#pickle files
+cat_model_ride_outcome_pred.pkl
+customer_cancel_risk_model.pkl
+rf_driver_delay_model.pkl
+RF_model.pkl

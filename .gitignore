@@ -46,3 +46,11 @@ cat_model_ride_outcome_pred.pkl
 customer_cancel_risk_model.pkl
 rf_driver_delay_model.pkl
 RF_model.pkl
+X_test_fare_pred_model.csv
+ride_outcome_pred_model.ipynb
+X_test_fare_pred_model.csv
+x_y_test_combined.csv
+y_test_fare_pred_model.csv
+ride_outcome_model_df.csv
+combined_test_x_y_fare_pred_model.csv
+ride_outcome_model_df.csv

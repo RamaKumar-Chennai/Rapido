@@ -329,8 +329,22 @@ def cancellations_by_hour(bookings_df):
     
     # Rename the grouping column
     res_df.rename(columns={'hour_of_day': 'Hour_of_Day'}, inplace=True)
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.barplot(
+        data=res_df,
+        x="Hour_of_Day",
+        y='Cancellation_count',
+        color="blue"
+        
+    )
+    ax.set_title("Cancellation Hours")
+    ax.set_xlabel("Hour_of_Day")
+    ax.set_ylabel("Cancellation_count")
+    #ax.set_ylim(df["ride_volume_by_city"].min() * 0.95,df["ride_volume_by_city"].max() * 1.05)
+
     
-    return res_df
+    return fig,res_df
 
 def surge_behaviour(bookings_df):
   booking_hour_df= bookings_df.groupby('hour_of_day')['booking_id'].count().reset_index()
@@ -348,7 +362,24 @@ def surge_behaviour(bookings_df):
 )
 
   print(booking_hour_df.head())
-  return booking_hour_df
+  surge_df=booking_hour_df[booking_hour_df['Surge_Flag']=='Surge']
+
+
+  fig, ax = plt.subplots(figsize=(8, 6))
+  sns.barplot(
+        data=surge_df,
+        x="Hour_of_Day",
+        y='Booking_count',
+        color="blue"
+        
+    )
+  ax.set_title("Surge Hours")
+  ax.set_xlabel("Hour_of_Day")
+  ax.set_ylabel("Booking_count")
+  ax.set_ylim(surge_df["Booking_count"].min() * 0.95,surge_df["Booking_count"].max() * 1.05)
+  
+
+  return fig,booking_hour_df
 
 def cancellation_reasons(bookings_df):
    reasons_df=bookings_df.groupby('incomplete_ride_reason').size().reset_index()

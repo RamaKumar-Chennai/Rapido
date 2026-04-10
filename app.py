@@ -141,19 +141,21 @@ elif main_menu_choice=="Visualization Outputs":
     fig=pickup_drop_city_heatmaps(bookings_df)
     st.pyplot(fig)
   if vs_output=="Cancellations by hour":
-    df=cancellations_by_hour(bookings_df)
+    fig,df=cancellations_by_hour(bookings_df)
     st.info("Cancellations By Hour")
     st.dataframe(df)
+    st.pyplot(fig)
   if vs_output=="Surge behavior patterns":
-    df=surge_behaviour(bookings_df)
+    fig,df=surge_behaviour(bookings_df)
     st.info("Surge Behaviour Analysis")
     st.dataframe(df)
+    st.pyplot(fig)
   if vs_output=="Customer vs Driver cancellation reasons":
    df=cancellation_reasons(bookings_df)
    st.info("Customer vs Driver Cancellation Reasons")
    st.dataframe(df)
 elif main_menu_choice=="Fare Prediction Model (Regression)":
-  i=3
+  i=0
 
   st.info(f"The sample of test data with the index {i} is")
   st.dataframe(test_fare_pred_df.iloc[[i]])
